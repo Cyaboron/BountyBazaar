@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CharacterInventory.h"
 #include "GameFramework/GameModeBase.h"
 #include "BountyBazaarGameMode.generated.h"
 
@@ -13,6 +14,10 @@ class ABountyBazaarGameMode : public AGameModeBase
 
 public:
 	ABountyBazaarGameMode();
+
+	
+	UFUNCTION(BlueprintCallable)
+	UCharacterInventory* GetCharacterInventory();
 };
 
 

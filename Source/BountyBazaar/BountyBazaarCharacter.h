@@ -14,7 +14,7 @@ class UInputAction;
 class UInputMappingContext;
 struct FInputActionValue;
 
-DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter2, Log, All);
 
 UCLASS(config=Game)
 class ABountyBazaarCharacter : public ACharacter

@@ -12,3 +12,8 @@ ABountyBazaarGameMode::ABountyBazaarGameMode()
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
 
 }
+
+UCharacterInventory* ABountyBazaarGameMode::GetCharacterInventory()
+{
+	return UCharacterInventory::GetInstance();
+}
