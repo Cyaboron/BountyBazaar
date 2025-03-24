@@ -21,3 +21,13 @@ void UCharacterInventory::Print()
 15.0f, FColor::Yellow,
 TEXT("Inside the CharacterInventory"));
 }
+
+UCharacterInventory::UCharacterInventory()
+{
+	for (int i = 0; i < InventorySize; i++)
+	{
+		int row = i / InventoryRowSize;
+		int column = i % InventoryRowSize;
+		InventoryItems.Add(FInventoryItem(row, column));
+	}
+}
