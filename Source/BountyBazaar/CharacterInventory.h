@@ -28,7 +28,11 @@ public:
 	int InventoryRowSize = 8;
 
 	UCharacterInventory();
-    
+
+	~UCharacterInventory();
+
+    UFUNCTION(BlueprintCallable)
+	void AddItem(FInventoryItemDefinition definition);
 };
 
 UCharacterInventory* UCharacterInventory::_instance = nullptr;

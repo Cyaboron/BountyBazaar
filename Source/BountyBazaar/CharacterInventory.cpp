@@ -31,3 +31,39 @@ UCharacterInventory::UCharacterInventory()
 		InventoryItems.Add(FInventoryItem(row, column));
 	}
 }
+
+UCharacterInventory::~UCharacterInventory()
+{
+	_instance = nullptr;
+	InventoryItems = TArray<FInventoryItem>();
+}
+
+void UCharacterInventory::AddItem(FInventoryItemDefinition definition)
+{
+	FInventoryItem* item = nullptr;
+	for(int i=0; i < InventoryItems.Num(); i++)
+	{
+		if(definition.Name == InventoryItems[i].InventoryItemDefinition.Name)
+		{
+			item = &InventoryItems[i];
+		}
+	}
+
+	if(item == nullptr)
+	{
+		for(int i=0; i < InventoryItems.Num(); i++)
+		{
+			if(InventoryItems[i].Count == 0)
+			{
+				item = &InventoryItems[i];
+				break;
+			}
+		}
+
+		if(item != nullptr)
+		{
+			item->Count++;
+			item->InventoryItemDefinition = definition;
+		}
+	}
+}
